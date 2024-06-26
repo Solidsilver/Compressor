@@ -1,7 +1,6 @@
 # Compressor - Minecraft Block Compression Plugin
 
-[![Build Status](your-build-badge-url-here)](your-build-pipeline-url-here)
-[![GitHub license](https://img.shields.io/github/license/your-github-username/Compressor)](https://github.com/your-github-username/Compressor/blob/master/LICENSE)
+![Build Status](https://github.com/Solidsilver/Compressor/actions/workflows/gradle.yml/badge.svg)
 
 Compressor optimizes block storage in your Minecraft world by allowing you to compress specific types of blocks into more compact forms. This is achieved through crafting 9x9 grids of the same block, with the ability to compress up to 32 times. Compressed blocks can be uncrafted back to their original state.
 
