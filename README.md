@@ -13,7 +13,7 @@ Compressor optimizes block storage in your Minecraft world by allowing you to co
 ## Installation
 
 1. **Prerequisites:** Ensure your server is running Paper version 1.20.4.
-2. **Download:** Get the latest `Compressor.jar` file from the [releases page](your-github-release-page-url).
+2. **Download:** Get the latest `Compressor-<VERSION>.jar` file from the [releases page]([your-github-release-page-url](https://github.com/Solidsilver/Compressor/releases)).
 3. **Installation:** Place the JAR file in your server's `plugins` folder.
 4. **Restart:** Restart your server to load the plugin.
 
@@ -39,14 +39,14 @@ Compressor optimizes block storage in your Minecraft world by allowing you to co
 
 ## Building from Source
 
-1. **Clone:** Clone this repository: `git clone https://github.com/your-github-username/Compressor.git`
+1. **Clone:** Clone this repository: `git clone https://github.com/Solidsilver/Compressor.git`
 2. **Build:** Use Gradle to build: `./gradlew build`
 3. **Jar:** The compiled plugin JAR will be in the `build/libs` folder.
 
 ## Contributing
 
-Contributions are welcome! Please follow our [contributing guidelines](CONTRIBUTING.md).
+Contributions are welcome! I will do my best to respond to issues and PRs in a timely manner.
 
 ## License
 
-This project is licensed under the [LICENSE-NAME] License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
