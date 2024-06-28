@@ -25,6 +25,9 @@ Compressor optimizes block storage in your Minecraft world by allowing you to co
     - Repeat this process with level 1 compressed blocks to create level 2, and so on.
 2. **Decompression:**
     - Place a compressed block alone in a crafting table to retrieve 9 blocks of the previous compression level.
+3. **Command:**
+    - `compr <block> <level> (amount)` command for giving yourself a compressed block
+    - `compressor.give` permission for the above command
 
 ## Supported Blocks
 
