@@ -15,19 +15,25 @@ import org.bukkit.persistence.PersistentDataType
 import org.bukkit.plugin.java.JavaPlugin
 import java.math.BigInteger
 import java.util.*
+import java.util.logging.Level
 
 class Compressor: JavaPlugin(), Listener {
     private val compLevelKey = NamespacedKey(this, "level")
 
+    companion object {
+        const val MAX_LEVEL = 32
+
+    }
+
     fun getCompLevelKey(): NamespacedKey {
         return compLevelKey
     }
+
     override fun onEnable() {
         super.onEnable()
         server.pluginManager.registerEvents(CompressListener(this), this)
         Bukkit.getPluginManager().registerEvents(this, this)
-        val compressedMaterials = listOf(
-            Material.COBBLESTONE,
+        val blocks = listOf(Material.COBBLESTONE,
             Material.COBBLED_DEEPSLATE,
             Material.GOLD_BLOCK,
             Material.STONE,
@@ -35,15 +41,17 @@ class Compressor: JavaPlugin(), Listener {
             Material.IRON_BLOCK,
             Material.DIORITE,
             Material.ANDESITE)
-        createAndAddRecipes(compressedMaterials, 32)
+        logger.log(Level.INFO, "Enabling compressed blocks: ${blocks.joinToString(", ") { it.name.lowercase() }}")
+        createAndAddBaseRecipes(blocks)
+        CompressCommand.registerSelf(this)
     }
 
-    private fun createAndAddRecipes(types: List<Material>, maxLevel: Int) {
+    private fun createAndAddBaseRecipes(types: List<Material>) {
         for (type in types) {
             server.addRecipe(this.createCompressedRecipe(type, 1))
-            for (lvl in 1..maxLevel) {
-//                Bukkit.addRecipe(this.createCompressedRecipe(type, lvl))
-                server.addRecipe(this.createUncompressedRecipe(type, lvl))
+            for (i in 1..MAX_LEVEL) {
+//                server.addRecipe(this.createCompressedRecipe(type, i))
+                server.addRecipe(this.createUncompressedRecipe(type, i))
             }
         }
     }

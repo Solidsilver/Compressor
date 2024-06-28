@@ -1,11 +1,10 @@
 plugins {
     id("java")
-//    id("io.papermc.paperweight.userdev") version "1.7.1"
     kotlin("jvm")
 }
 
 group = "com.solidsilver.papermc"
-version = "0.1.0-SNAPSHOT"
+version = "0.1.1"
 
 repositories {
     mavenCentral()

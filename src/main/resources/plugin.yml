@@ -1,11 +1,13 @@
 name: Compressor
-version: 0.1.0
+version: 0.1.1
 main: com.solidsilver.papermc.Compressor
 author: InspectorElement
-description: A small plugin for making large numbers of items manageable
+description: A small plugin for making large numbers of blocks manageable
 api-version: '1.20'
-#commands:
-#  compressedCobble:
-#    description: Gives the player a block of compressed cobble of the specified level
-#    usage: /<command> <level>
-#    aliases: [cc]
+commands:
+  give:
+    description: Gives the player a compressed block of the specified level
+    usage: /compr <block> <level> (amount)
+    aliases: [compr]
+    permission: compressor.give
+    permission-message: You don't have permission to run this command
